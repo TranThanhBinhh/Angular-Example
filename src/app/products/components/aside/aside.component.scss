@@ -1,0 +1,64 @@
+@import '../../../../styles.scss';
+
+.container__menu {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    padding: 0 0.5rem;
+
+    div:first-child {
+        height: calc(100% - 80px);
+
+        .menu--section {
+            font-size: .75rem;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            color: $gray-dark-color;
+        }
+
+        li {
+            margin: 10px 0px;
+            color: $gray-dark-color;
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+            font-size: .875rem;
+
+            :hover {
+                color: $black-color;
+            }
+        }
+    }
+
+    div:last-child {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        width: 100%;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+
+        li {
+            margin: 10px 0px;
+            color: $gray-dark-color;
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+            font-size: .75rem;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            color: $gray-dark-color;
+
+            :hover {
+                color: $black-color;
+            }
+        }
+    }
+
+}
