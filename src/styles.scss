@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+// Colors
+$black-color: #000;
+$white-color: #fff;
+$blue-dark-color: #2e54ea;
+$blue-ligth-color: #f0f5ff;
+$gray-dark-color: #6d7280;
+$gray-ligth-color: #f9fafb;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.btn {
+    border-radius: 0.3rem;
+    outline: none;
+    font-size: .875rem;
+    font-weight: 400;
+    padding: 0.4rem 0.9rem;
+    cursor: pointer;
+
+    &__primary {
+        background-color: $white-color;
+        border: 1px solid $blue-dark-color;
+        color: $blue-dark-color;
+    }
+
+    &__secondary {
+        background-color: $blue-dark-color;
+        border: 1px solid $blue-dark-color;
+        color: $white-color;
+    }
+}
+
