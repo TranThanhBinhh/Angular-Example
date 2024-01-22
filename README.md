@@ -44,18 +44,12 @@ Start the server
 ├── src
 │   ├── app
 │   │   ├── modules
-│   │   │   ├── dashboard
-│   │   │   └── landing
-│   │   │       └── pages
 │   │   ├── utils
 │   │   │   ├── guards
 │   │   │   ├── interceptors
-│   │   │       └── loading.interceptor.ts
 │   │   │   ├── services
-│   │   │       └── loading.service.ts
 │   │   │   ├── models
-│   │   │   └── styles
-│   │   │       └── variables.scss
+│   │   │   └── utils.module.ts
 │   │   ├── app-routing.module.ts
 │   │   ├── app.component.html
 │   │   ├── app.component.scss
@@ -92,8 +86,8 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 | Color             | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
 | Blue Dark | ![#2e54ea](https://via.placeholder.com/10/2e54ea?text=+) #2e54ea |
-| Gray Dark | ![#6d7280](https://via.placeholder.com/10/6d7280?text=+) #6d7280 |
 | Gray Ligth | ![#f9fafb](https://via.placeholder.com/10/f9fafb?text=+) #f9fafb |
+| Gray Dark | ![#6d7280](https://via.placeholder.com/10/6d7280?text=+) #6d7280 |
 
 
 ## Authors
