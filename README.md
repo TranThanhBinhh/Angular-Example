@@ -85,9 +85,9 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 | Color             | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-| Blue Dark | ![#2e54ea](https://via.placeholder.com/10/2e54ea?text=+) #2e54ea |
-| Gray Ligth | ![#f9fafb](https://via.placeholder.com/10/f9fafb?text=+) #f9fafb |
-| Gray Dark | ![#6d7280](https://via.placeholder.com/10/6d7280?text=+) #6d7280 |
+| Blue Dark | ![#2e54ea](https://via.placeholder.com/10/2e54ea?text=+) #2E54EA |
+| Gray Dark | ![#6d7280](https://via.placeholder.com/10/6d7280?text=+) #6D7280 |
+| Gray Ligth | ![#f9fafb](https://via.placeholder.com/10/f9fafb?text=+) #F9FAFB |
 
 
 ## Authors
