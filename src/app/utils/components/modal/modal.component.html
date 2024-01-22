@@ -1,0 +1,12 @@
+<div class="modal" *ngIf="showModal">
+    <div class="modal__content">
+      <div class="header">
+        <h3 class="text text--lg">{{ title }}</h3>
+        <span (click)="closeModal()" title="Close">X</span>
+      </div>
+      <div class="body">
+        <ng-content></ng-content>
+      </div>
+    </div>
+</div>
+  

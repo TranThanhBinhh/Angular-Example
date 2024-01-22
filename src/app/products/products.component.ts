@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { ModalComponent } from '../utils/components/modal/modal.component';
 
 @Component({
   selector: 'app-products',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent {
+  
+  @ViewChild(ModalComponent) modalComponent!: ModalComponent;
+
+  openModal() {
+    this.modalComponent.openModal();
+  }
   
 }
