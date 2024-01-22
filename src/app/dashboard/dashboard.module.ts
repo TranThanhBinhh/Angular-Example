@@ -9,8 +9,8 @@ import { ProductsModule } from '../products/products.module';
 
 @NgModule({
   declarations: [
+    AsideComponent,
     DashboardComponent,
-    AsideComponent
   ],
   imports: [
     CommonModule,
