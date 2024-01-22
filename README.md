@@ -1,7 +1,7 @@
 
 # Market
 
-Este proyecto es una aplicación web desarrollada en Angular 16 que implementa técnicas avanzadas como carga progresiva (lazy loading) y estilización con SASS. La aplicación está diseñada para la administración de productos a través de un dashboard, permitiendo operaciones CRUD (Crear, Leer, Actualizar y Eliminar) mediante microservicios HTTP.
+Este proyecto es una aplicación web desarrollada en Angular version 16 que implementa técnicas avanzadas como carga progresiva (lazy loading) y estilización con SASS. La aplicación está diseñada para ingresar a un dashboard por medio de un inicio de sesion para la administración de productos, permitiendo operaciones CRUD (Crear, Leer, Actualizar y Eliminar) mediante microservicios HTTP.
 
 
 ## Requirements
