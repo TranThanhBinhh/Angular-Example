@@ -74,7 +74,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run the next command for generate module of lazy loading
 ```bash
-    ng generate module modules/[new_module] --route modules/[new_module] --module app.module
+  ng generate module modules/[new_module] --route modules/[new_module] --module app.module
 ```
 ## Build
 
