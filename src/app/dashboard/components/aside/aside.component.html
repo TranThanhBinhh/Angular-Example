@@ -1,0 +1,19 @@
+<ul class="container__menu">
+    <div>
+        <p class="menu--section" *ngIf="!isCollapsed">Products</p>
+        <li [routerLink]="['.', { outlets: { 'dashboard': ['products'] } }]" title="List">
+            <img src="../../../../assets/icons/products.png" alt="Products">
+            <span class="item" *ngIf="!isCollapsed">List</span>
+        </li>
+    </div>
+    <div>
+        <li (click)="collpase()" title="Collapse">
+            <img src="../../../../assets/icons/collapse.png" alt="Collapse">
+            <span *ngIf="!isCollapsed">Collapse</span>
+        </li>
+        <li (click)="signout()" title="Sign Out">
+            <img src="../../../../assets/icons/logout.png" alt="Sign Out">
+            <span *ngIf="!isCollapsed">Sign Out</span>
+        </li>
+    </div>
+</ul>

@@ -5,15 +5,17 @@
     width: 100%;
     position: relative;
     padding: 0 0.5rem;
+    padding-left: 30px;
 
     div:first-child {
-        height: calc(100% - 80px);
+        height: calc(100% - 68px);
 
         .menu--section {
             font-size: .75rem;
             letter-spacing: .05em;
             text-transform: uppercase;
             color: $gray-dark-color;
+            margin-inline: 5px;
         }
 
         li {
@@ -36,14 +38,13 @@
         position: absolute;
         top: auto;
         bottom: 0;
-        width: 100%;
-        height: 80px;
+        height: 68px;
         display: flex;
         flex-direction: column;
         list-style: none;
 
         li {
-            margin: 10px 0px;
+            margin: 5px 0px;
             color: $gray-dark-color;
             cursor: pointer;
             display: flex;
@@ -53,7 +54,6 @@
             font-size: .75rem;
             letter-spacing: .05em;
             text-transform: uppercase;
-            color: $gray-dark-color;
 
             :hover {
                 color: $black-color;
