@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
-import { ProductsComponent } from '../products/products.component';
+import { SupersComponent } from '../modules/supermarket/components/supers/supers.component';
+import { CategoriesComponent } from '../modules/supermarket/components/categories/categories.component';
+import { ProductsComponent } from '../modules/supermarket/components/products/products.component';
 
 const routes: Routes = [{ path: '', component: DashboardComponent, children: [
-  { path: 'products', component: ProductsComponent, outlet: 'dashboard' }
+  { path: 'supermarkets', component: SupersComponent, outlet: 'dashboard' },
+  { path: 'categories', component: CategoriesComponent, outlet: 'dashboard' },
+  { path: 'products', component: ProductsComponent, outlet: 'dashboard' },
 ] }];
 
 @NgModule({

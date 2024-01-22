@@ -43,7 +43,10 @@ Start the server
 .
 ├── src
 │   ├── app
+│   │   ├── auth
+│   │   ├── dashboard
 │   │   ├── modules
+│   │   │   └── supermarket
 │   │   ├── utils
 │   │   │   ├── guards
 │   │   │   ├── interceptors

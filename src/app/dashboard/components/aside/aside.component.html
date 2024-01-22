@@ -1,9 +1,17 @@
 <ul class="container__menu">
     <div>
-        <p class="menu--section" *ngIf="!isCollapsed">Products</p>
-        <li [routerLink]="['.', { outlets: { 'dashboard': ['products'] } }]" title="List">
+        <p class="menu--section" *ngIf="!isCollapsed">Supermarket</p>
+        <li [routerLink]="['.', { outlets: { 'dashboard': ['products'] } }]" title="Products">
             <img src="../../../../assets/icons/products.png" alt="Products">
-            <span class="item" *ngIf="!isCollapsed">List</span>
+            <span class="item" *ngIf="!isCollapsed">Products</span>
+        </li>
+        <li [routerLink]="['.', { outlets: { 'dashboard': ['categories'] } }]" title="Categories">
+            <img src="../../../../assets/icons/categories.png" alt="Products">
+            <span class="item" *ngIf="!isCollapsed">Categories</span>
+        </li>
+        <li [routerLink]="['.', { outlets: { 'dashboard': ['supermarkets'] } }]" title="Supermarket">
+            <img src="../../../../assets/icons/supermarket.png" alt="Products">
+            <span class="item" *ngIf="!isCollapsed">Supermarkets</span>
         </li>
     </div>
     <div>
