@@ -10,7 +10,7 @@ export class CategoriesComponent {
 
   @ViewChild(ModalComponent) modalComponent!: ModalComponent;
 
-  openModal() {
+  addCategory() {
     this.modalComponent.openModal();
   }
 

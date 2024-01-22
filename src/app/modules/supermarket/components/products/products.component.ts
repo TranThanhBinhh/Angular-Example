@@ -10,7 +10,7 @@ export class ProductsComponent {
 
   @ViewChild(ModalComponent) modalComponent!: ModalComponent;
 
-  openModal() {
+  addProduct() {
     this.modalComponent.openModal();
   }
 

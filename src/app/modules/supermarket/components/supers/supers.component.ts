@@ -10,7 +10,7 @@ export class SupersComponent {
 
   @ViewChild(ModalComponent) modalComponent!: ModalComponent;
 
-  openModal() {
+  addSupermarket() {
     this.modalComponent.openModal();
   }
 

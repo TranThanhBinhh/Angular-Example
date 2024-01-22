@@ -16,6 +16,24 @@ $gray-ligth-color: #f9fafb;
     font-family: 'Roboto', sans-serif;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+
+    td, th {
+        border: 1px solid #dddddd;
+        padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+        background-color: $gray-ligth-color;
+    }
+}
 
 .btn {
     border-radius: 0.3rem;

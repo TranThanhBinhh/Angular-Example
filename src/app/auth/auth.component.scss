@@ -10,11 +10,12 @@
     background-color: $gray-ligth-color;
 
     &__left {
-        p {
+        a {
             color: $blue-dark-color;
             font-weight: 900;
             font-size: 1.5rem;
             letter-spacing: 2px;
+            text-decoration: none;
         }
     }
 

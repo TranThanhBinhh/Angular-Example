@@ -1,6 +1,30 @@
-<h3>Supermarkets</h3>
-<input type="button" value="Open modal" class="btn btn__primary" (click)="openModal()">
+<div class="container">
+    <h3>Supermarktes</h3>
 
-<app-modal [title]="'Create File'">
+    <input type="button" value="Add supermarket" class="btn btn__primary btn--floatTopRigth" (click)="addSupermarket()">
+
+    <div class="container__table">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>apple</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>apple</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<app-modal [title]="'Add supermarket'">
     modal
 </app-modal>
