@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ModalComponent } from 'src/app/utils/components/modal/modal.component';
 import { SupermarketsService } from '../../services/supermarkets.service';
 import { Supermarket } from '../../interfaces/supermarket';
+import { NotifyService } from 'src/app/utils/services/notify.service';
 
 @Component({
   selector: 'app-supers',
@@ -17,7 +18,7 @@ export class SupersComponent implements OnInit {
   supermarkets: Array<Supermarket> = [];
   @ViewChild(ModalComponent) modalComponent!: ModalComponent;
 
-  constructor(private services: SupermarketsService) { }
+  constructor(private services: SupermarketsService, private notifyService: NotifyService) { }
   
   ngOnInit() {
     this.getSupermarkets();
@@ -44,6 +45,7 @@ export class SupersComponent implements OnInit {
           console.log(resp);
           this.getSupermarkets();
           this.modalComponent.closeModal();
+          this.notifyService.notify(resp.message);
         },
         (error) => {
           console.error(error);
