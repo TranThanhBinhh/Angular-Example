@@ -16,6 +16,20 @@ $gray-ligth-color: #f9fafb;
     font-family: 'Roboto', sans-serif;
 }
 
+::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: $gray-ligth-color; 
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 0.5rem;
+    background: $gray-dark-color; 
+}
+
 h1, h2, h3, h4, h5, h6 {
     text-align: center;
     text-transform: uppercase;
@@ -53,6 +67,11 @@ table {
         background-color: $blue-dark-color;
         border: 1px solid $blue-dark-color;
         color: $white-color;
+
+        &:disabled {
+            border-color: rgba(46, 84, 234, 0.5);;
+            background-color: rgba(46, 84, 234, 0.5);;
+        }
     }
 }
 

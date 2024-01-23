@@ -7,6 +7,7 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { SupersComponent } from './components/supers/supers.component';
 import { UtilsModule } from 'src/app/utils/utils.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     SupermarketRoutingModule,
     UtilsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   exports: [
     ProductsComponent,

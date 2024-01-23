@@ -1,5 +1,5 @@
 <div class="container">
-    <h3>Supermarktes</h3>
+    <h3>Supermarkets</h3>
 
     <input type="button" value="Add supermarket" class="btn btn__primary btn--floatTopRigth" (click)="addSupermarket()" title="Add supermarket">
 
@@ -26,5 +26,12 @@
 </div>
 
 <app-modal [title]="'Add supermarket'">
-    modal
+    <form [formGroup]="createSupermarketForm">
+        <div class="formGroup">
+          <input type="text" formControlName="name" id="name" autocomplete="off" placeholder="Name supermarket">
+        </div>
+        <div class="formBtns">
+          <input type="submit" value="Create" (click)="createSupermarket()" title="Create" class="btn btn__secondary" [disabled]="!createSupermarketForm.valid">
+        </div>
+    </form>
 </app-modal>

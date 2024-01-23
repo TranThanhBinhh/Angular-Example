@@ -24,7 +24,14 @@
         </table>
     </div>
 </div>
-
+ 
 <app-modal [title]="'Add category'">
-    modal
+    <form [formGroup]="createCategoryForm">
+        <div class="formGroup">
+          <input type="text" formControlName="name" id="name" autocomplete="off" placeholder="Name category">
+        </div>
+        <div class="formBtns">
+          <input type="submit" value="Create" (click)="createCategory()" title="Create" class="btn btn__secondary" [disabled]="!createCategoryForm.valid">
+        </div>
+    </form>
 </app-modal>
