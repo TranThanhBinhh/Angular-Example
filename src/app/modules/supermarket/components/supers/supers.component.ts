@@ -61,6 +61,7 @@ export class SupersComponent implements OnInit {
     this.services.deleteSupermarket(id).subscribe( (resp) => {
       console.log(resp);
       this.getSupermarkets();
+      this.notifyService.notify(resp.message);
     }, (error) => {
       console.error(error);
     })
