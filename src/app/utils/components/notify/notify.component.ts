@@ -17,7 +17,7 @@ export class NotifyComponent {
       this.message = message;
       setTimeout(() => {
         this.message = null;
-      }, 30000);
+      }, 3000);
     });
   }
 
