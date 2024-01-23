@@ -1,11 +1,11 @@
 export enum enumProduct {
     products= '/product/all',
-    product= '/product',
+    product= '/product/',
 }
 
 export enum enumCategory {
-    products= '/product/all',
-    category= '/category',
+    categories= '/category/all',
+    category= '/category/',
 }
 
 export enum enumSupermarket {

@@ -1,9 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ModalComponent } from 'src/app/utils/components/modal/modal.component';
-import { SupermarketsService } from '../../services/supermarkets.service';
+
 import { Supermarket } from '../../interfaces/supermarket';
 import { NotifyService } from 'src/app/utils/services/notify.service';
+import { SupermarketsService } from '../../services/supermarkets.service';
+import { ModalComponent } from 'src/app/utils/components/modal/modal.component';
+
 
 @Component({
   selector: 'app-supers',

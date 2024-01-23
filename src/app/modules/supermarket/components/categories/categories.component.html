@@ -4,24 +4,23 @@
     <input type="button" value="Add category" class="btn btn__primary btn--floatTopRigth" (click)="addCategory()" title="Add category">
 
     <div class="container__table">
-        <table>
+        <table  *ngIf="categories.length !== 0">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>NAME</th>
+                    <th>DELETE</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>apple</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>apple</td>
+                <tr  *ngFor="let category of categories">
+                    <td>{{ category.id }}</td>
+                    <td>{{ category.name }}</td>
+                    <td><input type="button" class="btn btn__secondary" value="X" (click)="deleteCategory(category.id)" title="Delete"></td>
                 </tr>
             </tbody>
         </table>
+        <p *ngIf="categories.length === 0" class="msg msg--error">Not found data</p>
     </div>
 </div>
  
