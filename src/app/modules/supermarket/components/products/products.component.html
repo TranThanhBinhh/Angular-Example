@@ -4,7 +4,7 @@
     <input type="button" value="Add product" class="btn btn__primary btn--floatTopRigth" (click)="addProduct()" title="Add product">
 
     <div class="container__table">
-        <table>
+        <table *ngIf="products.length !== 0">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -14,19 +14,22 @@
                     <th>UNIT</th>
                     <th>CATEGORY</th>
                     <th>SUPERMARKET</th>
+                    <th>DELETE</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>apple</td>
-                    <td>2</td>
-                    <td>1</td>
-                    <td>unit</td>
-                    <td>fruits</td>
-                    <td>walmart</td>
+                <tr *ngFor="let product of products">
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>{{ product.value }}</td>
+                    <td>{{ product.unit }}</td>
+                    <td>{{ product.category }}</td>
+                    <td>{{ product.supermarket }}</td>
+                    <td><input type="button" class="btn btn__secondary" value="X" (click)="deleteProduct(product.id)" title="Delete"></td>
                 </tr>
             </tbody>
+            <p *ngIf="products.length === 0" class="msg msg--error">Not found data</p>
         </table>
     </div>
 </div>
