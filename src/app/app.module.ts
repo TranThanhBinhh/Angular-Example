@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { LoadingInterceptor } from './utils/interceptors/loading.interceptor';
+
+import { AppComponent } from './app.component';
 import { UtilsModule } from './utils/utils.module';
+import { AppRoutingModule } from './app-routing.module';
+import { LoadingInterceptor } from './utils/interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [

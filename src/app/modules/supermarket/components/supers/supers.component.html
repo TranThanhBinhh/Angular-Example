@@ -4,20 +4,23 @@
     <input type="button" value="Add supermarket" class="btn btn__primary btn--floatTopRigth" (click)="addSupermarket()" title="Add supermarket">
 
     <div class="container__table">
-        <table>
+        <table *ngIf="supermarkets.length !== 0">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>NAME</th>
+                    <th>DELETE</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let supermarket of supermarkets">
                     <td>{{ supermarket.id }}</td>
                     <td>{{ supermarket.name }}</td>
+                    <td><input type="button" class="btn btn__secondary" value="X" (click)="deleteSupermarket(supermarket.id)" title="Delete"></td>
                 </tr>
             </tbody>
         </table>
+        <p *ngIf="supermarkets.length === 0" class="msg msg--error">Not found data</p>
     </div>
 </div>
 

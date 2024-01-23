@@ -44,4 +44,8 @@ export class SupersComponent implements OnInit {
     }
   }
 
+  deleteSupermarket(id: number) {
+    console.log('Supermarket deleted: ', id);
+  }
+
 }

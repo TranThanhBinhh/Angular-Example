@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { DashboardRoutingModule } from './dashboard-routing.module';
-import { DashboardComponent } from './dashboard.component';
-import { AsideComponent } from './components/aside/aside.component';
 import { HttpClientModule } from '@angular/common/http';
+
+import { DashboardComponent } from './dashboard.component';
+import { DashboardRoutingModule } from './dashboard-routing.module';
+import { AsideComponent } from './components/aside/aside.component';
+import { SupermarketModule } from '../modules/supermarket/supermarket.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SupermarketModule
   ]
 })
 export class DashboardModule { }
