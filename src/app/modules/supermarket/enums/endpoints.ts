@@ -10,5 +10,5 @@ export enum enumCategory {
 
 export enum enumSupermarket {
     supermarkets= '/supermarket/all',
-    supermarket= '/supermarket',
+    supermarket= '/supermarket/',
 }

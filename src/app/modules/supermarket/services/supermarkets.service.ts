@@ -1,9 +1,11 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
-import { enumSupermarket } from '../enums/endpoints';
 import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+
 import { Response } from '../interfaces/response';
+import { enumSupermarket } from '../enums/endpoints';
+import { environment } from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
@@ -27,16 +29,24 @@ export class SupermarketsService {
     return
   }
 
-  postSupermarket() {
-    return
+  postSupermarket(name: string): Observable<Response> {
+    const headers = new HttpHeaders({
+      'accept': 'application/json',
+      'api-key': this.apiKey
+    });    
+    return this.http.post<Response>(this.apiUrl + enumSupermarket.supermarket, name, {headers: headers})
   }
 
   putSupermarket() {
     return
   }
 
-  deleteSupermarket() {
-    return
+  deleteSupermarket(id: number): Observable<Response> {
+    const headers = new HttpHeaders({
+      'accept': 'application/json',
+      'api-key': this.apiKey
+    });
+    return this.http.delete<Response>(this.apiUrl + enumSupermarket.supermarket + id, {headers: headers})
   }
 
 }

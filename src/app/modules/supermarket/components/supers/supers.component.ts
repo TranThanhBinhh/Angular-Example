@@ -22,6 +22,11 @@ export class SupersComponent implements OnInit {
   ngOnInit() {
     this.getSupermarkets();
   }
+  
+  addSupermarket() {
+    this.modalComponent.openModal();
+  }
+
 
   getSupermarkets() {
     this.services.getSupermarkets().subscribe( (resp) => {
@@ -31,21 +36,32 @@ export class SupersComponent implements OnInit {
     })
   }
 
-  addSupermarket() {
-    this.modalComponent.openModal();
-  }
-
   createSupermarket() {
-    if(this.createSupermarketForm.valid) {
-      console.log(this.createSupermarketForm.value);
+    const supermarketName = this.createSupermarketForm.value.name;    
+    if (supermarketName && this.createSupermarketForm.valid) {
+      this.services.postSupermarket(supermarketName).subscribe(
+        (resp) => {
+          console.log(resp);
+          this.getSupermarkets();
+          this.modalComponent.closeModal();
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
       this.createSupermarketForm.reset();
     } else {
-      console.log('Error');
+      console.log('Error: invalid form');
     }
   }
 
   deleteSupermarket(id: number) {
-    console.log('Supermarket deleted: ', id);
+    this.services.deleteSupermarket(id).subscribe( (resp) => {
+      console.log(resp);
+      this.getSupermarkets();
+    }, (error) => {
+      console.error(error);
+    })
   }
 
 }
