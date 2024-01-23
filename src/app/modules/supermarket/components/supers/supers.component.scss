@@ -3,17 +3,18 @@
 .container {
     width: 100%;
     height: 100%;
+    overflow: auto;
     position: relative;
 
     .btn--floatTopRigth {
-        position: absolute;
         top: 0;
         right: 0;
+        position: absolute;
     }
 
     &__table {
-        margin-top: 2rem;
         overflow: auto;
+        margin-top: 2rem;
     }
 }
 
@@ -26,9 +27,9 @@ form {
         input {
             width: 100%;
             height: 35px;
-            border: 1px solid $gray-dark-color;
-            border-radius: 0.5rem;
             padding: 0px 10px;
+            border-radius: 0.5rem;
+            border: 1px solid $gray-dark-color;
         }
     }
 

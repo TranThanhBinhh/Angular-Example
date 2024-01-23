@@ -4,13 +4,13 @@
     position: relative;
 
     .btn--floatTopRigth {
-        position: absolute;
         top: 0;
         right: 0;
+        position: absolute;
     }
 
     &__table {
-        margin-top: 2rem;
         overflow: auto;
+        margin-top: 2rem;
     }
 }

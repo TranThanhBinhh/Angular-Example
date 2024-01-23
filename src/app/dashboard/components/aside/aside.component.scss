@@ -3,30 +3,30 @@
 .container__menu {
     height: 100%;
     width: 100%;
-    position: relative;
     padding: 0 0.5rem;
     padding-left: 30px;
+    position: relative;
 
     div:first-child {
         height: calc(100% - 68px);
 
         .menu--section {
             font-size: .75rem;
-            letter-spacing: .05em;
-            text-transform: uppercase;
-            color: $gray-dark-color;
             margin-inline: 5px;
+            letter-spacing: .05em;
+            color: $gray-dark-color;
+            text-transform: uppercase;
         }
 
         li {
-            margin: 10px 0px;
-            color: $gray-dark-color;
-            cursor: pointer;
+            gap: 8px;
             display: flex;
+            cursor: pointer;
+            margin: 10px 0px;
+            font-size: .895rem;
             flex-direction: row;
             align-items: center;
-            gap: 8px;
-            font-size: .895rem;
+            color: $gray-dark-color;
 
             :hover {
                 color: $black-color;
@@ -35,24 +35,24 @@
     }
 
     div:last-child {
-        position: absolute;
         top: auto;
         bottom: 0;
         height: 68px;
         display: flex;
-        flex-direction: column;
         list-style: none;
+        position: absolute;
+        flex-direction: column;
 
         li {
-            margin: 5px 0px;
-            color: $gray-dark-color;
-            cursor: pointer;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
             gap: 8px;
+            display: flex;
+            cursor: pointer;
+            margin: 5px 0px;
             font-size: .75rem;
+            align-items: center;
+            flex-direction: row;
             letter-spacing: .05em;
+            color: $gray-dark-color;
             text-transform: uppercase;
 
             :hover {

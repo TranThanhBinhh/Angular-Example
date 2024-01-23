@@ -1,14 +1,14 @@
-export enum product {
+export enum enumProduct {
     products= '/product/all',
     product= '/product',
 }
 
-export enum category {
+export enum enumCategory {
     products= '/product/all',
     category= '/category',
 }
 
-export enum supermarket {
-    products= '/product/all',
+export enum enumSupermarket {
+    supermarkets= '/supermarket/all',
     supermarket= '/supermarket',
 }

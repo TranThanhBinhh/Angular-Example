@@ -36,12 +36,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 table {
-    border-collapse: collapse;
     width: 100%;
+    border-collapse: collapse;
 
     td, th {
-        border: 1px solid #dddddd;
         padding: 8px;
+        border: 1px solid #dddddd;
     }
     
     tr:nth-child(even), th {
@@ -50,27 +50,27 @@ table {
 }
 
 .btn {
-    border-radius: 0.3rem;
     outline: none;
+    cursor: pointer;
     font-size: .875rem;
     font-weight: 400;
+    border-radius: 0.3rem;
     padding: 0.4rem 0.9rem;
-    cursor: pointer;
 
     &__primary {
+        color: $blue-dark-color;
         background-color: $white-color;
         border: 1px solid $blue-dark-color;
-        color: $blue-dark-color;
     }
 
     &__secondary {
+        color: $white-color;
         background-color: $blue-dark-color;
         border: 1px solid $blue-dark-color;
-        color: $white-color;
 
         &:disabled {
-            border-color: rgba(46, 84, 234, 0.5);;
-            background-color: rgba(46, 84, 234, 0.5);;
+            border-color: rgba(46, 84, 234, 0.5);
+            background-color: rgba(46, 84, 234, 0.5);
         }
     }
 }

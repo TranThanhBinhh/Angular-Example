@@ -12,13 +12,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>apple</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>apple</td>
+                <tr *ngFor="let supermarket of supermarkets">
+                    <td>{{ supermarket.id }}</td>
+                    <td>{{ supermarket.name }}</td>
                 </tr>
             </tbody>
         </table>
