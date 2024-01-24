@@ -4,13 +4,13 @@
 Este proyecto es una aplicación web desarrollada en Angular version 16 que implementa técnicas avanzadas como carga progresiva (lazy loading) y estilización con SASS. La aplicación está diseñada para ingresar a un dashboard por medio de un inicio de sesion para la administración de productos, permitiendo operaciones CRUD (Crear, Leer, Actualizar y Eliminar) mediante microservicios HTTP.
 
 
-## Requirements
+## 🔧 Requirements
 
 - [Node (v20.8.0)](https://nodejs.org/en)
 - [Angular CLI (v16.2.10)](https://angular.io/cli)
     
     
-## Run Locally
+## 🧰 Run Locally
 
 Clone the project
 
@@ -37,7 +37,7 @@ Start the server
 ```
 
 
-## Structure
+## 📋 Structure
 
 ```bash
 .
@@ -68,7 +68,7 @@ Start the server
 └── README.md
 ```
 
-## Code scaffolding
+## 💬 Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
@@ -76,15 +76,15 @@ Run the next command for generate module of lazy loading
 ```bash
   ng generate module modules/[new_module] --route modules/[new_module] --module app.module
 ```
-## Build
+## 💻 Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## 🛠️ Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Color Reference
+## ✒️ Color Reference
 
 | Color             | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
@@ -93,6 +93,6 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 | Gray Ligth | ![#f9fafb](https://via.placeholder.com/10/f9fafb?text=+) #F9FAFB |
 
 
-## Authors
+## ✍️ Authors
 
 - [AndresOrozcoDev](https://github.com/AndresOrozcoDev)
