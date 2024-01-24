@@ -11,10 +11,11 @@
   align-items: center;
   justify-content: center;
   background: rgba(249, 250, 251, 0.9);
-
+  
   &__content {
     padding: 20px;
     max-height: 75%;
+    overflow-y: auto;
     position: relative;
     margin-inline: auto;
     border-radius: 0.5rem;

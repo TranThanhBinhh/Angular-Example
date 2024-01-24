@@ -1,1 +1,18 @@
-<p>register works!</p>
+<div class="container">
+    <div class="container__form">
+        <form [formGroup]="registerForm">
+            <h3>Register</h3>
+            <div class="formGroup">
+                <label for="email">Email</label>
+                <input type="email" formControlName="email" id="email" autocomplete="off" placeholder="hello@example.com">
+            </div>
+            <div class="formGroup">
+                <label for="password">Password</label>
+                <input type="password" formControlName="password" id="password" autocomplete="off">
+            </div>
+            <div class="formBtns">
+                <input type="submit" value="Register" (click)="register()" title="Register" class="btn btn__secondary" [disabled]="!registerForm.valid">
+            </div>
+        </form>
+    </div>
+</div>

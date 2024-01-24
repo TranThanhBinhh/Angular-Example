@@ -1,0 +1,40 @@
+@import '../../../../styles.scss';
+
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 70px);
+    background-color: $gray-ligth-color;
+
+    &__form {
+        padding: 2rem 1rem 4rem;
+        margin-inline: auto;
+        border-radius: 0.5rem;
+        background-color: $white-color;
+        width: min(100% - 40px, 400px);
+        border: 1px solid $gray-dark-color;
+    }
+
+    form {
+
+        .formGroup {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0.9rem;
+
+            label {
+                margin-bottom: 5px;
+                font-size: 0.875rem;
+                line-height: 1.25rem;
+            }
+        }
+
+        .formBtns {
+            
+            input {
+                width: 100%;
+            }
+        }
+    }
+}

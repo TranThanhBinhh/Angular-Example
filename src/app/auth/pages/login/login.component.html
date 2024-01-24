@@ -1,1 +1,18 @@
-<p>login works!</p>
+<div class="container">
+    <div class="container__form">
+        <form [formGroup]="loginForm">
+            <h3>Log In</h3>
+            <div class="formGroup">
+                <label for="email">Email</label>
+                <input type="email" formControlName="email" id="email" autocomplete="off" placeholder="hello@example.com">
+            </div>
+            <div class="formGroup">
+                <label for="password">Password</label>
+                <input type="password" formControlName="password" id="password" autocomplete="off">
+            </div>
+            <div class="formBtns">
+                <input type="submit" value="Login" (click)="login()" title="Login" class="btn btn__secondary" [disabled]="!loginForm.valid">
+            </div>
+        </form>
+    </div>
+</div>

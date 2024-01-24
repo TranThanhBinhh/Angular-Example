@@ -20,6 +20,7 @@ export class AsideComponent {
   }
 
   signout() {
+    sessionStorage.removeItem('user');
     this.router.navigate(['/']);
   }
 

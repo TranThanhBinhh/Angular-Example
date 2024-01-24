@@ -29,11 +29,33 @@
                     <td><input type="button" class="btn btn__secondary" value="X" (click)="deleteProduct(product.id)" title="Delete"></td>
                 </tr>
             </tbody>
-            <p *ngIf="products.length === 0" class="msg msg--error">Not found data</p>
         </table>
+        <p *ngIf="products.length === 0" class="msg msg--error">Not found data</p>
     </div>
 </div>
 
 <app-modal [title]="'Add product'">
-    modal
+    <form [formGroup]="createProductForm">
+        <div class="formGroup">
+          <input type="text" formControlName="name" id="name" autocomplete="off" placeholder="Name product">
+        </div>
+        <div class="formGroup">
+          <input type="text" formControlName="price" id="price" autocomplete="off" placeholder="Price product">
+        </div>
+        <div class="formGroup">
+          <input type="text" formControlName="value" id="value" autocomplete="off" placeholder="Value product">
+        </div>
+        <div class="formGroup">
+          <input type="text" formControlName="unit" id="unit" autocomplete="off" placeholder="Unit product">
+        </div>
+        <div class="formGroup">
+          <input type="text" formControlName="category" id="category" autocomplete="off" placeholder="Category product">
+        </div>
+        <div class="formGroup">
+          <input type="text" formControlName="supermarket" id="supermarket" autocomplete="off" placeholder="Supermarket product">
+        </div>
+        <div class="formBtns">
+          <input type="submit" value="Create" (click)="createProduct()" title="Create" class="btn btn__secondary" [disabled]="!createProductForm.valid">
+        </div>
+    </form>
 </app-modal>
