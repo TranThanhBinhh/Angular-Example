@@ -47,7 +47,7 @@ export class SupersComponent implements OnInit {
           console.log(resp);
           this.getSupermarkets();
           this.modalComponent.closeModal();
-          this.notifyService.notify(resp.message);
+          this.notifyService.notify(resp.message, 'success');
         },
         (error) => {
           console.error(error);
@@ -63,7 +63,7 @@ export class SupersComponent implements OnInit {
     this.services.deleteSupermarket(id).subscribe( (resp) => {
       console.log(resp);
       this.getSupermarkets();
-      this.notifyService.notify(resp.message);
+      this.notifyService.notify(resp.message, 'success');
     }, (error) => {
       console.error(error);
     })

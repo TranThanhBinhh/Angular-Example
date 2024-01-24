@@ -1,6 +1,6 @@
 @import '../../../../styles.scss';
 
-.notification {
+.notify {
     z-index: 2;
     right: 10px;
     bottom: 20px;
@@ -8,7 +8,9 @@
     color: $white-color;
     padding: 0.5rem 3.5rem;
     border-radius: 0.5rem;
-    border: 1px solid $blue-dark-color;
-    background-color: $blue-dark-color;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.error { background-color: #ff6961; } /* Estilos para error */
+.warning { background-color: #ffd700; } /* Estilos para warning */
+.success { background-color: #90ee90; } /* Estilos para success */

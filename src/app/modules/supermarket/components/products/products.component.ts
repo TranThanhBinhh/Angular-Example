@@ -50,7 +50,7 @@ export class ProductsComponent implements OnInit {
     this.services.deleteProduct(id).subscribe( (resp) => {
       console.log(resp);
       this.getProducts();
-      this.notifyService.notify(resp.message);
+      this.notifyService.notify(resp.message, 'success');
     }, (error) => {
       console.error(error);
     })

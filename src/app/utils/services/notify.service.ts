@@ -9,11 +9,11 @@ export class NotifyService {
 
   constructor() { }
 
-  private notifySubject = new Subject<string>();
+  private notifySubject = new Subject<{ message: string, styleClass: string }>();
 
   notify$ = this.notifySubject.asObservable();
 
-  notify(message: string) {
-    this.notifySubject.next(message);
+  notify(message: string, styleClass: string) {
+    this.notifySubject.next({ message, styleClass });
   }
 }

@@ -45,7 +45,7 @@ export class CategoriesComponent implements OnInit {
           console.log(resp);
           this.getCategories();
           this.modalComponent.closeModal();
-          this.notifyService.notify(resp.message);
+          this.notifyService.notify(resp.message, 'succese');
         },
         (error) => {
           console.error(error);
@@ -61,7 +61,7 @@ export class CategoriesComponent implements OnInit {
     this.services.deleteCategory(id).subscribe( (resp) => {
       console.log(resp);
       this.getCategories();
-      this.notifyService.notify(resp.message);
+      this.notifyService.notify(resp.message, 'success');
     }, (error) => {
       console.error(error);
     })
