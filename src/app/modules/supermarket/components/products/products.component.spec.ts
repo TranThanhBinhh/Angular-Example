@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProductsComponent } from './products.component';
 import { UtilsModule } from 'src/app/utils/utils.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('ProductsComponent', () => {
   let component: ProductsComponent;
@@ -10,7 +11,7 @@ describe('ProductsComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [UtilsModule, ReactiveFormsModule],
+      imports: [UtilsModule, ReactiveFormsModule, HttpClientTestingModule],
       declarations: [ProductsComponent]
     });
     fixture = TestBed.createComponent(ProductsComponent);

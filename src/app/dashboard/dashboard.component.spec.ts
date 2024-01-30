@@ -22,4 +22,27 @@ describe('DashboardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should handle collapse with default values', () => {
+    // Initially, widthAside should be '250px' and widthBody should be 'calc(100vw - 250px)'
+    expect(component.widthAside).toEqual('250px');
+    expect(component.widthBody).toEqual('calc(100vw - 250px)');
+    // Trigger handleCollapse with collapse = false
+    component.handleCollapse(false);
+    // After handling collapse, values should remain the same
+    expect(component.widthAside).toEqual('250px');
+    expect(component.widthBody).toEqual('calc(100vw - 250px)');
+  });
+
+  it('should handle collapse when collapse is true', () => {
+    // Initially, widthAside should be '250px' and widthBody should be 'calc(100vw - 250px)'
+    expect(component.widthAside).toEqual('250px');
+    expect(component.widthBody).toEqual('calc(100vw - 250px)');
+    // Trigger handleCollapse with collapse = true
+    component.handleCollapse(true);
+    // After handling collapse, values should be updated
+    expect(component.widthAside).toEqual('75px');
+    expect(component.widthBody).toEqual('calc(100vw - 75px)');
+  });
+
 });

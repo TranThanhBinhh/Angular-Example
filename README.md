@@ -73,9 +73,11 @@ Start the server
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 Run the next command for generate module of lazy loading
+
 ```bash
   ng generate module modules/[new_module] --route modules/[new_module] --module app.module
 ```
+
 ## 💻 Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
@@ -83,6 +85,12 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## 🛠️ Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+Generate coverage report with the next command and show report in coverage/market_frontend_angular/index.html.
+
+```bash
+  ng test --code-coverage
+```
 
 ## ✒️ Color Reference
 
