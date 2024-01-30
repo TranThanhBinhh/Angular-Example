@@ -43,7 +43,6 @@ export class CategoriesComponent implements OnInit {
     if (categoryName && this.createCategoryForm.valid) {
       this.services.postCategory(categoryName).subscribe(
         (resp) => {
-          console.log(resp);
           this.getCategories();
           this.modalComponent.closeModal();
           this.notifyService.notify(resp.message, 'succese');
@@ -55,13 +54,12 @@ export class CategoriesComponent implements OnInit {
       );
       this.createCategoryForm.reset();
     } else {
-      console.log('Error: invalid form');
+      this.notifyService.notify('Empty fields.', 'error');
     }
   }
 
   deleteCategory(id: number) {
     this.services.deleteCategory(id).subscribe( (resp) => {
-      console.log(resp);
       this.getCategories();
       this.notifyService.notify(resp.message, 'success');
     }, (error) => {

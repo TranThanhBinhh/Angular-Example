@@ -9,6 +9,7 @@
                 <tr>
                     <th>ID</th>
                     <th>NAME</th>
+                    <th>UPDATE</th>
                     <th>DELETE</th>
                 </tr>
             </thead>
@@ -16,6 +17,7 @@
                 <tr *ngFor="let supermarket of supermarkets">
                     <td>{{ supermarket.id }}</td>
                     <td>{{ supermarket.name }}</td>
+                    <td><input type="button" class="btn btn__secondary" value="O" (click)="editSupermarket(supermarket.id)" title="Update"></td>
                     <td><input type="button" class="btn btn__secondary" value="X" (click)="deleteSupermarket(supermarket.id)" title="Delete"></td>
                 </tr>
             </tbody>
@@ -24,13 +26,21 @@
     </div>
 </div>
 
-<app-modal [title]="'Add supermarket'">
-    <form [formGroup]="createSupermarketForm">
+<app-modal [title]="'Supermarket'" (close)="closeModal()">
+    <form [formGroup]="createSupermarketForm" *ngIf="isNew">
         <div class="formGroup">
-          <input type="text" formControlName="name" id="name" autocomplete="off" placeholder="Name supermarket">
+          <input type="text" formControlName="name" id="name" autocomplete="off" placeholder="Name new supermarket">
         </div>
         <div class="formBtns">
           <input type="submit" value="Create" (click)="createSupermarket()" title="Create" class="btn btn__secondary" [disabled]="!createSupermarketForm.valid">
         </div>
+    </form>
+    <form [formGroup]="updateSupermarketForm" *ngIf="isUpdate">
+        <div class="formGroup">
+            <input type="text" formControlName="name" id="name" autocomplete="off" placeholder="Name supermarket">
+          </div>
+          <div class="formBtns">
+            <input type="submit" value="Update" (click)="updateSupermarket()" title="Update" class="btn btn__secondary">
+          </div>
     </form>
 </app-modal>

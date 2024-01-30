@@ -49,10 +49,16 @@
           <input type="text" formControlName="unit" id="unit" autocomplete="off" placeholder="Unit product">
         </div>
         <div class="formGroup">
-          <input type="text" formControlName="category" id="category" autocomplete="off" placeholder="Category product">
+          <select formControlName="category" name="category" id="category">
+            <option disabled selected value="">Category</option>
+            <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+          </select>
         </div>
         <div class="formGroup">
-          <input type="text" formControlName="supermarket" id="supermarket" autocomplete="off" placeholder="Supermarket product">
+          <select formControlName="supermarket" name="supermarket" id="supermarket">
+            <option disabled selected value="">Supermarket</option>
+            <option *ngFor="let supermarket of supermarkets" [value]="supermarket.id">{{ supermarket.name }}</option>
+          </select>
         </div>
         <div class="formBtns">
           <input type="submit" value="Create" (click)="createProduct()" title="Create" class="btn btn__secondary" [disabled]="!createProductForm.valid">

@@ -17,7 +17,12 @@ export class SupersComponent implements OnInit {
   createSupermarketForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
   });
+  updateSupermarketForm = new FormGroup({
+    name: new FormControl('', [Validators.required]),
+  });
   supermarkets: Array<Supermarket> = [];
+  isNew: boolean = false;
+  isUpdate: boolean = false;
   @ViewChild(ModalComponent) modalComponent!: ModalComponent;
 
   constructor(private services: SupermarketsService, private notifyService: NotifyService) { }
@@ -27,7 +32,18 @@ export class SupersComponent implements OnInit {
   }
   
   addSupermarket() {
+    this.isNew = true;
     this.modalComponent.openModal();
+  }
+
+  editSupermarket(id: number) {
+    this.isUpdate = true;
+    this.modalComponent.openModal();
+  }
+
+  closeModal() {
+    this.isNew = false;
+    this.isUpdate = false;
   }
 
 
@@ -45,9 +61,9 @@ export class SupersComponent implements OnInit {
     if (supermarketName && this.createSupermarketForm.valid) {
       this.services.postSupermarket(supermarketName).subscribe(
         (resp) => {
-          console.log(resp);
           this.getSupermarkets();
           this.modalComponent.closeModal();
+          this.isNew = false;
           this.notifyService.notify(resp.message, 'success');
         },
         (error) => {
@@ -57,13 +73,16 @@ export class SupersComponent implements OnInit {
       );
       this.createSupermarketForm.reset();
     } else {
-      console.log('Error: invalid form');
+      this.notifyService.notify('Empty fields.', 'error');
     }
+  }
+
+  updateSupermarket() {
+    
   }
 
   deleteSupermarket(id: number) {
     this.services.deleteSupermarket(id).subscribe( (resp) => {
-      console.log(resp);
       this.getSupermarkets();
       this.notifyService.notify(resp.message, 'success');
     }, (error) => {
