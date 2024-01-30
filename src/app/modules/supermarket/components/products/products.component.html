@@ -8,13 +8,14 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>NAME</th>
-                    <th>PRICE</th>
-                    <th>VALUE</th>
-                    <th>UNIT</th>
-                    <th>CATEGORY</th>
-                    <th>SUPERMARKET</th>
-                    <th>DELETE</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Value</th>
+                    <th>Unit</th>
+                    <th>Category</th>
+                    <th>Supermarket</th>
+                    <th>Update</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,8 +25,9 @@
                     <td>{{ product.price }}</td>
                     <td>{{ product.value }}</td>
                     <td>{{ product.unit }}</td>
-                    <td>{{ product.category }}</td>
-                    <td>{{ product.supermarket }}</td>
+                    <td>{{ product.category_id }}</td>
+                    <td>{{ product.supermarket_id }}</td>
+                    <td><input type="button" class="btn btn__secondary" value="O" (click)="updateProduct()" title="Update"></td>
                     <td><input type="button" class="btn btn__secondary" value="X" (click)="deleteProduct(product.id)" title="Delete"></td>
                 </tr>
             </tbody>
@@ -34,7 +36,7 @@
     </div>
 </div>
 
-<app-modal [title]="'Add product'">
+<app-modal [title]="'Product'">
     <form [formGroup]="createProductForm">
         <div class="formGroup">
           <input type="text" formControlName="name" id="name" autocomplete="off" placeholder="Name product">

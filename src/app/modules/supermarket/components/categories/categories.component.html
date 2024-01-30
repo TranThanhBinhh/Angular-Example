@@ -8,14 +8,16 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>NAME</th>
-                    <th>DELETE</th>
+                    <th>Name</th>
+                    <th>Update</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
                 <tr  *ngFor="let category of categories">
                     <td>{{ category.id }}</td>
                     <td>{{ category.name }}</td>
+                    <td><input type="button" class="btn btn__secondary" value="O" (click)="updateCategory()" title="Update"></td>
                     <td><input type="button" class="btn btn__secondary" value="X" (click)="deleteCategory(category.id)" title="Delete"></td>
                 </tr>
             </tbody>

@@ -75,17 +75,70 @@ export class ProductsComponent implements OnInit {
   }
 
   createProduct() {
+    const { product, isProduct } = this.validateForm(this.createProductForm.value);
+    if(isProduct) {
+      this.services.postProduct(product).subscribe(
+        (resp) => {
+          this.getProducts();
+          this.modalComponent.closeModal();
+          this.notifyService.notify(resp.message, 'success');
+        },
+        (error) => {
+          this.notifyService.notify(error.message, 'error');
+          console.error(error);
+        }
+      );
+    } else {
+      this.notifyService.notify('Empty fields.', 'error');
+    }
+  }
 
+  updateProduct() {
+    
   }
   
-  deleteProduct(id: number) {
-    this.services.deleteProduct(id).subscribe( (resp) => {
-      this.getProducts();
-      this.notifyService.notify(resp.message, 'success');
-    }, (error) => {
-      this.notifyService.notify(error.message, 'error');
-      console.error(error);
-    })
+  deleteProduct(id: number | undefined) {
+    if(id) {
+      this.services.deleteProduct(id).subscribe( (resp) => {
+        this.getProducts();
+        this.notifyService.notify(resp.message, 'success');
+      }, (error) => {
+        this.notifyService.notify(error.message, 'error');
+        console.error(error);
+      })
+    } else {
+      this.notifyService.notify('ID not found.', 'error');
+    }
+  }
+
+  validateForm(product: any) {
+    const name = this.createProductForm.value.name;
+    const price = this.createProductForm.value.price;
+    const value = this.createProductForm.value.value;
+    const unit = this.createProductForm.value.unit;
+    const category_id = this.createProductForm.value.category;
+    const supermarket_id = this.createProductForm.value.supermarket;
+  
+    if (
+      name !== undefined &&
+      price !== undefined &&
+      value !== undefined &&
+      unit !== undefined &&
+      category_id !== undefined &&
+      supermarket_id !== undefined
+    ) {
+      const product: Product = {
+        name: name as string,
+        price: parseFloat(price as string),
+        value: parseFloat(value as string),
+        unit: unit as string,
+        category_id: parseInt(category_id as string),
+        supermarket_id: parseInt(supermarket_id as string),
+      };
+      return { product: product, isProduct: true }
+    } else {
+      return { product: {name: '', price: 0, value: 0, unit: '', category_id: 0, supermarket_id: 0}, isProduct: false }
+    }
   }
 
 }
