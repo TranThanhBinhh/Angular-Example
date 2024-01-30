@@ -33,6 +33,7 @@ export class CategoriesComponent implements OnInit {
     this.services.getCategories().subscribe( (resp) => {
       this.categories = resp.data;
     }, (error) => {
+      this.notifyService.notify(error.message, 'error');
       console.error(error);
     })
   }
@@ -48,6 +49,7 @@ export class CategoriesComponent implements OnInit {
           this.notifyService.notify(resp.message, 'succese');
         },
         (error) => {
+          this.notifyService.notify(error.message, 'error');
           console.error(error);
         }
       );
@@ -63,6 +65,7 @@ export class CategoriesComponent implements OnInit {
       this.getCategories();
       this.notifyService.notify(resp.message, 'success');
     }, (error) => {
+      this.notifyService.notify(error.message, 'error');
       console.error(error);
     })
   }

@@ -38,6 +38,7 @@ export class ProductsComponent implements OnInit {
     this.services.getProducts().subscribe( (resp) => {
       console.log(resp);
     }, (error) => {
+      this.notifyService.notify(error.message, 'error');
       console.error(error);
     })
   }
@@ -52,6 +53,7 @@ export class ProductsComponent implements OnInit {
       this.getProducts();
       this.notifyService.notify(resp.message, 'success');
     }, (error) => {
+      this.notifyService.notify(error.message, 'error');
       console.error(error);
     })
   }

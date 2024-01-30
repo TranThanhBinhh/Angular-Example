@@ -35,6 +35,7 @@ export class SupersComponent implements OnInit {
     this.services.getSupermarkets().subscribe( (resp) => {
       this.supermarkets = resp.data;
     }, (error) => {
+      this.notifyService.notify(error.message, 'error');
       console.error(error);
     })
   }
@@ -50,6 +51,7 @@ export class SupersComponent implements OnInit {
           this.notifyService.notify(resp.message, 'success');
         },
         (error) => {
+          this.notifyService.notify(error.message, 'error');
           console.error(error);
         }
       );
@@ -65,6 +67,7 @@ export class SupersComponent implements OnInit {
       this.getSupermarkets();
       this.notifyService.notify(resp.message, 'success');
     }, (error) => {
+      this.notifyService.notify(error.message, 'error');
       console.error(error);
     })
   }

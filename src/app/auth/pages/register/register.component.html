@@ -10,6 +10,10 @@
                 <label for="password">Password</label>
                 <input type="password" formControlName="password" id="password" autocomplete="off">
             </div>
+            <div class="formGroup">
+                <label for="confirmPassword">Confirm password</label>
+                <input type="password" formControlName="confirmPassword" id="confirmPassword" autocomplete="off">
+            </div>
             <div class="formBtns">
                 <input type="submit" value="Register" (click)="register()" title="Register" class="btn btn__secondary" [disabled]="!registerForm.valid">
             </div>

@@ -8,6 +8,8 @@ $blue-dark-color: #2e54ea;
 $gray-dark-color: #6d7280;
 $gray-ligth-color: #f9fafb;
 $error-color: #FF0000;
+$warning-color: #ffd700;
+$success-color: #90ee90;
 
 
 * {
@@ -53,10 +55,10 @@ table {
 .btn {
     outline: none;
     cursor: pointer;
-    font-size: .875rem;
     font-weight: 400;
+    font-size: .875rem;
+    padding: 0.5rem 1rem;
     border-radius: 0.3rem;
-    padding: 0.4rem 0.9rem;
 
     &__primary {
         color: $blue-dark-color;
@@ -97,8 +99,8 @@ input[type="text"], input[type="email"], input[type="password"] {
     border: 1px solid $gray-dark-color;
 
     &:focus-within, &:active, &:focus, &:focus-visible, &:visited {
+        outline: none;
         border-color: $blue-dark-color;
         box-shadow: 0px 0px 4px 0px rgba(46,84,234,1);
-        outline: none;
     }
 }

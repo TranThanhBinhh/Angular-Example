@@ -1,9 +1,9 @@
 @import '../../../../styles.scss';
 
 .notify {
-    z-index: 2;
     right: 10px;
     bottom: 20px;
+    z-index: 99999;
     position: fixed;
     color: $white-color;
     padding: 0.5rem 3.5rem;
@@ -11,6 +11,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.error { background-color: #ff6961; } /* Estilos para error */
-.warning { background-color: #ffd700; } /* Estilos para warning */
-.success { background-color: #90ee90; } /* Estilos para success */
+.error { background-color: $error-color; }
+.warning { background-color: $warning-color; }
+.success { background-color: $success-color; }

@@ -21,11 +21,11 @@ export class LoginComponent {
 
   login() {
     if(this.loginForm.valid) {
-      sessionStorage.setItem('user', JSON.stringify(this.loginForm.value))
+      localStorage.setItem('user', JSON.stringify(this.loginForm.value))
       this.router.navigate(['/dashboard']);
     } else {
-      this.notify.notify('Invalid form.', 'error')
-      console.error('Error: invalid form.');
+      this.notify.notify('An error has occurred.', 'error')
+      console.error('Error.');
     }
   }
 

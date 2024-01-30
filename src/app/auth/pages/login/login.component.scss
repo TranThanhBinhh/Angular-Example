@@ -8,9 +8,9 @@
     background-color: $gray-ligth-color;
 
     &__form {
-        padding: 2rem 1rem 4rem;
         margin-inline: auto;
         border-radius: 0.5rem;
+        padding: 4rem 2rem 7rem;
         background-color: $white-color;
         width: min(100% - 40px, 400px);
         border: 1px solid $gray-dark-color;
@@ -20,8 +20,8 @@
 
         .formGroup {
             display: flex;
-            flex-direction: column;
             margin-bottom: 0.9rem;
+            flex-direction: column;
 
             label {
                 margin-bottom: 5px;
@@ -31,6 +31,7 @@
         }
 
         .formBtns {
+            margin-top: 1rem;
             
             input {
                 width: 100%;
