@@ -21,26 +21,23 @@ export class RegisterComponent {
   constructor(private router: Router, private notify: NotifyService) { }
 
   register() {
-    if(this.validateForm()) {
+    const { isValid, message } = this.validateForm();
+    if(isValid) {
       localStorage.setItem('user', JSON.stringify(this.registerForm.value))
       this.router.navigate(['/dashboard']);
     } else {
-      this.notify.notify('An error has occurred.', 'error')
-      console.error('Error.');
+      this.notify.notify(message, 'error')
+      console.error('Error: ' + message);
     }
   }
 
   validateForm() {
     if((this.registerForm.value.email === '') || (this.registerForm.value.password === '') || (this.registerForm.value.confirmPassword === '')) {
-      this.notify.notify('Empty fields.', 'error')
-      console.error('Error: Empty fields.');
-      return false;
+      return { isValid : false, message : 'Empty fields.' };
     } else if(this.registerForm.value.password !== this.registerForm.value.confirmPassword) {
-      this.notify.notify('Passwords do not match.', 'error')
-      console.error('Error: invalid form.');
-      return false;
+      return { isValid : false, message : 'Passwords do not match.' };
     } else {
-      return true;
+      return { isValid : true, message : ''};
     }
   }
 
