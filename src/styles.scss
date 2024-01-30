@@ -9,7 +9,7 @@ $gray-dark-color: #6d7280;
 $gray-ligth-color: #f9fafb;
 $error-color: #FF0000;
 $warning-color: #ffd700;
-$success-color: #90ee90;
+$success-color: #28a745;
 
 
 * {
@@ -44,6 +44,7 @@ table {
 
     td, th {
         padding: 8px;
+        text-align: center;
         border: 1px solid #dddddd;
     }
     

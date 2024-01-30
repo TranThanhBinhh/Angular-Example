@@ -8,9 +8,9 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>NAME</th>
-                    <th>UPDATE</th>
-                    <th>DELETE</th>
+                    <th>Name</th>
+                    <th>Update</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -40,7 +40,7 @@
             <input type="text" formControlName="name" id="name" autocomplete="off" placeholder="Name supermarket">
           </div>
           <div class="formBtns">
-            <input type="submit" value="Update" (click)="updateSupermarket()" title="Update" class="btn btn__secondary">
+            <input type="submit" value="Update" (click)="updateSupermarket()" title="Update" class="btn btn__secondary" [disabled]="!updateSupermarketForm.valid">
           </div>
     </form>
 </app-modal>

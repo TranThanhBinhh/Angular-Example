@@ -45,7 +45,7 @@ export class CategoriesComponent implements OnInit {
         (resp) => {
           this.getCategories();
           this.modalComponent.closeModal();
-          this.notifyService.notify(resp.message, 'succese');
+          this.notifyService.notify(resp.message, 'success');
         },
         (error) => {
           this.notifyService.notify(error.message, 'error');
@@ -59,17 +59,20 @@ export class CategoriesComponent implements OnInit {
   }
 
   updateCategory() {
-    
+    // ToDo
   }
 
   deleteCategory(id: number) {
-    this.services.deleteCategory(id).subscribe( (resp) => {
-      this.getCategories();
-      this.notifyService.notify(resp.message, 'success');
-    }, (error) => {
-      this.notifyService.notify(error.message, 'error');
-      console.error(error);
-    })
+    if(id) {
+      this.services.deleteCategory(id).subscribe( (resp) => {
+        this.getCategories();
+        this.notifyService.notify(resp.message, 'success');
+      }, (error) => {
+        this.notifyService.notify(error.message, 'error');
+      })
+    } else {
+      this.notifyService.notify('ID not found', 'error');
+    }
   }
 
 }

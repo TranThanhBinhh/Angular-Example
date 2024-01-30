@@ -24,8 +24,7 @@ export class LoginComponent {
       localStorage.setItem('user', JSON.stringify(this.loginForm.value))
       this.router.navigate(['/dashboard']);
     } else {
-      this.notify.notify('An error has occurred.', 'error')
-      console.error('Error.');
+      this.notify.notify('Empty fields.', 'error')
     }
   }
 

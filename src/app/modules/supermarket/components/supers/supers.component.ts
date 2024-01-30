@@ -39,6 +39,7 @@ export class SupersComponent implements OnInit {
   editSupermarket(id: number) {
     this.isUpdate = true;
     this.modalComponent.openModal();
+    this.getSupermarketById(id)
   }
 
   closeModal() {
@@ -54,6 +55,10 @@ export class SupersComponent implements OnInit {
       this.notifyService.notify(error.message, 'error');
       console.error(error);
     })
+  }
+
+  getSupermarketById(id: number) {
+    // ToDo
   }
 
   createSupermarket() {
@@ -78,17 +83,25 @@ export class SupersComponent implements OnInit {
   }
 
   updateSupermarket() {
-    
+    if(this.updateSupermarketForm.valid) {
+      // ToDo
+    } else {
+      this.notifyService.notify('Empty fields.', 'error');
+    }
   }
 
   deleteSupermarket(id: number) {
-    this.services.deleteSupermarket(id).subscribe( (resp) => {
-      this.getSupermarkets();
-      this.notifyService.notify(resp.message, 'success');
-    }, (error) => {
-      this.notifyService.notify(error.message, 'error');
-      console.error(error);
-    })
+    if(id) {
+      this.services.deleteSupermarket(id).subscribe( (resp) => {
+        this.getSupermarkets();
+        this.notifyService.notify(resp.message, 'success');
+      }, (error) => {
+        this.notifyService.notify(error.message, 'error');
+        console.error(error);
+      })
+    } else {
+      this.notifyService.notify('ID not found', 'error');
+    }
   }
 
 }

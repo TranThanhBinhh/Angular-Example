@@ -27,7 +27,6 @@ export class RegisterComponent {
       this.router.navigate(['/dashboard']);
     } else {
       this.notify.notify(message, 'error')
-      console.error('Error: ' + message);
     }
   }
 
