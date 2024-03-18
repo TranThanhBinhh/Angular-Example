@@ -27,7 +27,7 @@
                     <td>{{ product.unit }}</td>
                     <td>{{ product.category_id }}</td>
                     <td>{{ product.supermarket_id }}</td>
-                    <td><input type="button" class="btn btn__secondary" value="O" (click)="updateProduct()" title="Update"></td>
+                    <td><input type="button" class="btn btn__secondary" value="O" (click)="product.id !== undefined && updateProduct(product.id!)" title="Update"></td>
                     <td><input type="button" class="btn btn__secondary" value="X" (click)="deleteProduct(product.id)" title="Delete"></td>
                 </tr>
             </tbody>
