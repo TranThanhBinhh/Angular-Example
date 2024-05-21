@@ -14,8 +14,8 @@ export class RegisterComponent {
 
   registerForm = new FormGroup({
     email: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required, Validators.pattern('^(?=.*[A-Z])(?=.*\d).+$')]),
-    confirmPassword: new FormControl('', [Validators.required, Validators.pattern('^(?=.*[A-Z])(?=.*\d).+$')])
+    password: new FormControl('', [Validators.required]),
+    confirmPassword: new FormControl('', [Validators.required])
   });
 
   constructor(private router: Router, private notify: NotifyService) { }

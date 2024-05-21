@@ -93,7 +93,7 @@ export class ProductsComponent implements OnInit {
     }
   }
 
-  updateProduct() {
+  updateProduct(id: number | undefined) {
     
   }
   
