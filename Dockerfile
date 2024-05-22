@@ -1,23 +1,26 @@
-# Usa una imagen base de Node.js
-FROM node:17-slim
+# Usar una imagen base que contenga Node.js
+FROM node:latest AS builder
 
-# Establece el directorio de trabajo dentro del contenedor
-WORKDIR /usr/src/app
+# Establecer el directorio de trabajo dentro del contenedor
+WORKDIR /app
 
-# Copia el package.json y el package-lock.json para instalar dependencias
-COPY package*.json ./
-
-# Instala las dependencias del proyecto
-RUN npm install
-
-# Copia todos los archivos del proyecto al contenedor
+# Copiar los archivos de tu proyecto al contenedor
 COPY . .
 
-# Compila la aplicación Angular
-RUN npm run build
+# Instalar las dependencias del proyecto
+RUN npm install
 
-# Exponer el puerto 80 (ajusta el puerto según tus necesidades)
+# Compilar el proyecto
+RUN npm run build --prod
+
+# Etapa de producción
+FROM nginx:latest
+
+# Copiar los archivos compilados al directorio de Nginx
+COPY --from=builder /app/dist/* /usr/share/nginx/html/
+
+# Exponer el puerto 80 para acceder al servidor web
 EXPOSE 80
 
-# Comando para ejecutar la aplicación Angular
-CMD ["npm", "start"]
+# Comando para iniciar el servidor Nginx en primer plano
+CMD ["nginx", "-g", "daemon off;"]
