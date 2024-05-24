@@ -15,6 +15,7 @@ export class LoginComponent {
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
+    showPassword: new FormControl(false)
   });
 
   constructor(private router: Router, private notify: NotifyService) { }
@@ -25,6 +26,20 @@ export class LoginComponent {
       this.router.navigate(['/dashboard']);
     } else {
       this.notify.notify('Empty fields.', 'error')
+    }
+  }
+
+  togglePasswordVisibility() {
+    const passwordControl = this.loginForm.get('password');
+    const showPasswordControl = this.loginForm.get('showPassword');
+  
+    if (passwordControl) { // Verifica que passwordControl no sea null
+      if (showPasswordControl?.value) {
+        passwordControl.setValidators([]);
+      } else {
+        passwordControl.setValidators([Validators.required]);
+      }
+      passwordControl.updateValueAndValidity();
     }
   }
 

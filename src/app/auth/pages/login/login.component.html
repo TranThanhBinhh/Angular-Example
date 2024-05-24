@@ -8,7 +8,11 @@
             </div>
             <div class="formGroup">
                 <label for="password">Password</label>
-                <input type="password" formControlName="password" id="password" autocomplete="off">
+                <input type="{{ loginForm.get('showPassword')?.value ? 'text' : 'password' }}" id="password" formControlName="password" placeholder="********">
+            </div>
+            <div>
+                <input type="checkbox" id="showPassword" formControlName="showPassword" (change)="togglePasswordVisibility()">
+                <label for="showPassword" class="msg">Show password</label>
             </div>
             <div class="formBtns">
                 <input type="submit" value="Login" (click)="login()" title="Login" class="btn btn__secondary" [disabled]="!loginForm.valid">
