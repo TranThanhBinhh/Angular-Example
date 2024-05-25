@@ -1,0 +1,22 @@
+@import '../../../../styles.scss';
+
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 70px);
+    background-color: $gray-ligth-color;
+
+    img {
+        border-radius: 25%;
+    }
+}
+
+@media (min-width: 600px) {
+    .container {
+        align-items: end;
+        justify-content: end;
+
+    }
+ }
