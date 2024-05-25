@@ -35,7 +35,7 @@ export class ProductsService {
       'accept': 'application/json',
       'api-key': this.apiKey
     });    
-    return this.http.post<Response>(this.apiUrl + enumProduct.product, product, {headers: headers})
+    return this.http.post<Response>(this.apiUrl + enumProduct.new_product, product, {headers: headers})
   }
 
   putProduct() {

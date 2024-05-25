@@ -34,7 +34,7 @@ export class SupermarketsService {
       'accept': 'application/json',
       'api-key': this.apiKey
     });    
-    return this.http.post<Response>(this.apiUrl + enumSupermarket.supermarket, name, {headers: headers})
+    return this.http.post<Response>(this.apiUrl + enumSupermarket.new_supermarket, name, {headers: headers})
   }
 
   putSupermarket() {

@@ -34,7 +34,7 @@ export class CategoriesService {
       'accept': 'application/json',
       'api-key': this.apiKey
     });    
-    return this.http.post<Response>(this.apiUrl + enumCategory.category, name, {headers: headers})
+    return this.http.post<Response>(this.apiUrl + enumCategory.new_category, name, {headers: headers})
   }
 
   putCategory() {
