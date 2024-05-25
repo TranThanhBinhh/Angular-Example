@@ -7,7 +7,10 @@ services:
       dockerfile: Dockerfile
     container_name: angular_web
     ports:
-      - "85:80"
+      - "4200:80"
+    environment:
+      URL_BASE_API: http://localhost:8000/api
+      SECRET_API_KEY: development
     networks:
       - app-network
 
