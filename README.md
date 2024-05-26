@@ -1,10 +1,12 @@
 
 # Market
 
-Este proyecto es una aplicación web desarrollada en Angular version 16 que implementa técnicas avanzadas como carga progresiva (lazy loading) y estilización con SASS. La aplicación está diseñada para ingresar a un dashboard por medio de un inicio de sesion para la administración de productos, permitiendo operaciones CRUD (Crear, Leer, Actualizar y Eliminar) mediante microservicios HTTP.
+Este proyecto es una aplicación web desarrollada en Angular 16 que implementa técnicas avanzadas como carga progresiva (lazy loading) y estilización con SASS. La aplicación está diseñada para la administración de productos a través de un dashboard, permitiendo operaciones CRUD (Crear, Leer, Actualizar y Eliminar) mediante microservicios HTTP.
 
 
 ## 🔧 Requirements
+
+Asegúrate de tener instalados los siguientes programas antes de ejecutar la aplicación:
 
 - [Node (v20.8.0)](https://nodejs.org/en)
 - [Angular CLI (v16.2.10)](https://angular.io/cli)
@@ -12,25 +14,27 @@ Este proyecto es una aplicación web desarrollada en Angular version 16 que impl
     
 ## 🧰 Run Locally
 
-Clone the project
+Sigue estos pasos para ejecutar el proyecto en tu máquina local:
+
+Clona el repositorio:
 
 ```bash
   git clone https://github.com/AndresOrozcoDev/market_frontend_angular.git
 ```
 
-Go to the project directory
+Navega al directorio del proyecto:
 
 ```bash
   cd market_frontend_angular
 ```
 
-Install dependencies
+Instala las dependencias:
 
 ```bash
   npm install
 ```
 
-Start the server
+Inicia el servidor:
 
 ```bash
   ng serve
@@ -68,37 +72,48 @@ Start the server
 └── README.md
 ```
 
+
 ## 💬 Code scaffolding
+
+Para generar un nuevo componente, ejecuta el siguiente comando:
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-Run the next command for generate module of lazy loading
+Para generar un módulo de carga diferida:
 
 ```bash
   ng generate module modules/[new_module] --route modules/[new_module] --module app.module
 ```
 
+
 ## 💻 Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Para compilar el proyecto, ejecuta el siguiente comando:
+
+```bash
+  ng build
+```
+
+Los archivos compilados se guardarán en el directorio `dist/`.
+
 
 ## 🛠️ Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-Generate coverage report with the next command and show report in coverage/market_frontend_angular/index.html.
+Para ejecutar las pruebas unitarias utilizando [Karma](https://karma-runner.github.io), ejecuta el siguiente comando:
 
 ```bash
   ng test --code-coverage
 ```
 
+
 ## ✒️ Color Reference
 
 | Color             | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-| Blue Dark | ![#2e54ea](https://via.placeholder.com/10/2e54ea?text=+) #2E54EA |
-| Gray Dark | ![#6d7280](https://via.placeholder.com/10/6d7280?text=+) #6D7280 |
-| Gray Ligth | ![#f9fafb](https://via.placeholder.com/10/f9fafb?text=+) #F9FAFB |
+| Blue Dark | ![#2e54ea](https://via.placeholder.com/10/2e54ea?text=+) #2e54ea |
+| Blue Ligth | ![#f0f5ff](https://via.placeholder.com/10/f0f5ff?text=+) #f0f5ff |
+| Gray Dark | ![#6d7280](https://via.placeholder.com/10/6d7280?text=+) #6d7280 |
+| Gray Ligth | ![#f9fafb](https://via.placeholder.com/10/f9fafb?text=+) #f9fafb |
 
 
 ## ✍️ Authors
