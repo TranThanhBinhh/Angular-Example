@@ -17,7 +17,7 @@ import { SupermarketModule } from '../modules/supermarket/supermarket.module';
     CommonModule,
     DashboardRoutingModule,
     HttpClientModule,
-    SupermarketModule
+    // SupermarketModule
   ]
 })
 export class DashboardModule { }

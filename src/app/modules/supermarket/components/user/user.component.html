@@ -1,0 +1,49 @@
+<div class="container">
+    <h3>Users</h3>
+
+    <input type="button" value="Add users" class="btn btn__primary btn--floatTopRigth" (click)="addProduct()" title="Add product">
+
+    <div class="container__table">
+        <table *ngIf="users.length !== 0">
+            <thead>
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{ user.firstname }}</td>
+                    <td>{{ user.lastname }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.role }}</td>
+                    <td><input type="button" class="btn btn__secondary" value="O" (click)="user.email !== undefined && updateProduct(1)" title="Update"></td>
+                    <td><input type="button" class="btn btn__secondary" value="X" (click)="deleteProduct(1)" title="Delete"></td>
+                </tr>
+            </tbody>
+        </table>
+        <p *ngIf="users.length === 0" class="msg msg--error">Not found data</p>
+    </div>
+</div>
+
+<app-modal [title]="'User'">
+    <form [formGroup]="createUserForm">
+        <div class="formGroup">
+          <input type="text" formControlName="Firstname" id="firstname" autocomplete="off" placeholder="First name">
+        </div>
+        <div class="formGroup">
+          <input type="text" formControlName="Last name" id="lastname" autocomplete="off" placeholder="Last name">
+        </div>
+        <div class="formGroup">
+          <input type="text" formControlName="Email" id="value" autocomplete="off" placeholder="Email">
+        </div>
+        <div class="formGroup">
+          <input type="text" formControlName="unit" id="unit" autocomplete="off" placeholder="Role">
+        </div>
+        <div class="formBtns">
+          <input type="submit" value="Create" (click)="createProduct()" title="Create" class="btn btn__secondary" [disabled]="!createUserForm.valid">
+        </div>
+    </form>
+</app-modal>

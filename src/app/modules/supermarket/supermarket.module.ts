@@ -8,13 +8,15 @@ import { SupersComponent } from './components/supers/supers.component';
 import { SupermarketRoutingModule } from './supermarket-routing.module';
 import { ProductsComponent } from './components/products/products.component';
 import { CategoriesComponent } from './components/categories/categories.component';
+import { UsersComponent } from './components/user/user.component';
 
 
 @NgModule({
   declarations: [
     ProductsComponent,
     CategoriesComponent,
-    SupersComponent
+    SupersComponent,
+    UsersComponent
   ],
   imports: [
     CommonModule,

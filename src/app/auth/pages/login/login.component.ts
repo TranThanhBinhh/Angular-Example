@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { NotifyService } from 'src/app/utils/services/notify.service';
+import { UserService } from 'src/app/modules/supermarket/services/user.service';
 
 
 @Component({
@@ -18,14 +19,24 @@ export class LoginComponent {
     showPassword: new FormControl(false)
   });
 
-  constructor(private router: Router, private notify: NotifyService) { }
+  constructor(private router: Router, private notify: NotifyService, private userSerive: UserService) { }
 
   login() {
-    if(this.loginForm.valid) {
-      localStorage.setItem('user', JSON.stringify(this.loginForm.value))
-      this.router.navigate(['/dashboard']);
+    if (this.loginForm.valid) {
+      const { email, password } = this.loginForm.value;
+      console.log(email, password);
+      this.userSerive.login(email||'', password||'').subscribe(
+        response => {
+          localStorage.setItem('user', JSON.stringify(response.data.user));
+          localStorage.setItem('token', response.token);
+          this.router.navigate(['/dashboard']);
+        },
+        error => {
+          this.notify.notify('Invalid credentials or login failed.', 'error');
+        }
+      );
     } else {
-      this.notify.notify('Empty fields.', 'error')
+      this.notify.notify('Empty fields.', 'error');
     }
   }
 

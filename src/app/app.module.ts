@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { UtilsModule } from './utils/utils.module';
 import { AppRoutingModule } from './app-routing.module';
 import { LoadingInterceptor } from './utils/interceptors/loading.interceptor';
+import { AuthInterceptor } from './utils/interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { LoadingInterceptor } from './utils/interceptors/loading.interceptor';
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: LoadingInterceptor,
+      useClass: AuthInterceptor,
       multi: true,
     }
   ],

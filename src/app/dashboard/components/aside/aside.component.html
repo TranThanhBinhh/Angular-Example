@@ -13,6 +13,10 @@
             <img src="../../../../assets/icons/supermarket.png" alt="Products">
             <span class="item" *ngIf="!isCollapsed">Supermarkets</span>
         </li>
+        <li [routerLink]="['.', { outlets: { 'dashboard': ['users'] } }]" title="Supermarket">
+            <img src="../../../../assets/icons/supermarket.png" alt="Products">
+            <span class="item" *ngIf="!isCollapsed">User</span>
+        </li>
     </div>
     <div>
         <li (click)="collpase()" title="Collapse">
